@@ -1,2 +1,23 @@
 # Hey-Crypto-
-This Crypto Currency Price Tracker web app uses HTML, CSS, and JavaScript to fetch live prices of Bitcoin, Ethereum, Dogecoin, and Solana from the CoinGecko API. It features a dark tech-themed animated UI and helped me practice API integration, async JavaScript, and frontend design.
+# Crypto Currency Price Tracker
+This is a Crypto Currency Price Tracker web app built using HTML, CSS, and JavaScript. It fetches real-time prices of Bitcoin, Ethereum, Dogecoin, and Solana using the CoinGecko API.
+## Features
+- Live cryptocurrency price updates
+- Real-time API integration
+- Dark tech-themed animated UI
+- Responsive and modern design
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- CoinGecko API
+## What I Learned
+This project helped me practice:
+- API integration
+- Async JavaScript (fetch)
+- Frontend UI design
+## API Used
+CoinGecko API: https://www.coingecko.com/en/api
+
+## Author
+Shradha Tiwari
