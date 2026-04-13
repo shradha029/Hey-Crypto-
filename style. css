@@ -1,0 +1,248 @@
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #0a0a0f, #12121c, #1b1530, #24163a);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Coin  */
+.coin {
+  position: fixed;
+  font-size: 42px;
+  opacity: 0.10;
+  animation: floatCoin 10s linear infinite;
+  filter: drop-shadow(0 0 8px #9d4edd);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.coin1 { left: 8%;  animation-duration: 11s; animation-delay: 0s; }
+.coin2 { left: 35%; animation-duration: 13s; animation-delay: 3s; }
+.coin3 { left: 62%; animation-duration: 9s;  animation-delay: 6s; }
+.coin4 { left: 82%; animation-duration: 14s; animation-delay: 1.5s; }
+
+@keyframes floatCoin {
+  0%   { top: 105%; transform: rotate(0deg); }
+  100% { top: -15%; transform: rotate(360deg); }
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 420px;
+  max-width: calc(100% - 32px);
+  margin: 60px auto;
+  padding: 32px 28px;
+  border-radius: 24px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(157, 78, 221, 0.25);
+  box-shadow: 0 0 40px rgba(157, 78, 221, 0.12);
+}
+
+/* Heading */
+h1 {
+  font-size: 26px;
+  margin-bottom: 14px;
+  color: #c77dff;
+  text-shadow: 0 0 12px rgba(199, 125, 255, 0.6);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Meta row — last updated + live badge */
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #a8edbb;
+  background: rgba(100, 220, 140, 0.08);
+  border: 1px solid rgba(100, 220, 140, 0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4caf50;
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* Crypto Cards */
+.crypto-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.10), rgba(255, 255, 255, 0.02));
+  margin: 12px 0;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(199, 125, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crypto-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 20px rgba(199, 125, 255, 0.2);
+}
+
+/* Card left: icon + name */
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.coin-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.btc-icon  { background: rgba(247, 147, 26, 0.15);  color: #f7931a; border: 1px solid rgba(247,147,26,0.3);  }
+.eth-icon  { background: rgba(98, 126, 234, 0.15);  color: #627eea; border: 1px solid rgba(98,126,234,0.3);  }
+.doge-icon { background: rgba(194, 163, 76, 0.15);  color: #c2a34c; border: 1px solid rgba(194,163,76,0.3);  }
+.sol-icon  { background: rgba(20, 241, 149, 0.12);  color: #14f195; border: 1px solid rgba(20,241,149,0.3);  }
+
+.coin-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f8f9fa;
+  margin: 0;
+}
+
+.coin-symbol {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+  display: block;
+}
+
+/* Card right: price + change */
+.card-right {
+  text-align: right;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0aaff;
+  text-shadow: 0 0 8px rgba(224, 170, 255, 0.3);
+  margin: 0;
+  transition: color 0.6s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Flash animations on price update */
+.price.flash-up {
+  color: #4cdf80 !important;
+  text-shadow: 0 0 10px rgba(76, 223, 128, 0.5) !important;
+}
+
+.price.flash-down {
+  color: #ff5c5c !important;
+  text-shadow: 0 0 10px rgba(255, 92, 92, 0.5) !important;
+}
+
+/* 24h Change labels */
+.change {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.change.up      { color: #4cdf80; }
+.change.down    { color: #ff5c5c; }
+.change.neutral { color: rgba(255, 255, 255, 0.35); }
+
+/* Refresh Button */
+button {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #7b2cbf, #c77dff);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 22px rgba(199, 125, 255, 0.45);
+}
+
+button:active {
+  transform: scale(0.98);
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 30px auto;
+    padding: 24px 18px;
+  }
+
+  h1 { font-size: 22px; }
+  .price { font-size: 16px; }
+  .coin-icon { width: 36px; height: 36px; font-size: 15px; }
+}
