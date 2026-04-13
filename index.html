@@ -1,23 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crypto Price Tracker</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Hey Crypto</h1>
-    <h2>Crypto Price Tracker</h2>
+    <div class="coin coin1">₿</div>
+    <div class="coin coin2">Ξ</div>
+    <div class="coin coin3">Ð</div>
+    <div class="coin coin4">S</div>
 
-    <div class="crypto-card">
-        <h2>Bitcoin (BTC)</h2>
-        <p id="bitcoin">Loading...</p>
+    <div class="container">
+        <h1>Hey Crypto</h1>
+        
+        <div class="meta-row">
+            <span id="last-updated" class="last-updated">Connecting...</span>
+            <div class="live-badge">
+                <div class="live-dot"></div>
+                LIVE
+            </div>
+        </div>
+
+        <div class="crypto-card">
+            <div class="card-left">
+                <div class="coin-icon btc-icon">₿</div>
+                <div class="coin-info">
+                    <h2>Bitcoin</h2>
+                    <span class="coin-symbol">BTC</span>
+                </div>
+            </div>
+            <div class="card-right">
+                <p class="price" id="bitcoin-price">Loading...</p>
+                <span class="change neutral" id="bitcoin-change">—</span>
+            </div>
+        </div>
+
+        <div class="crypto-card">
+            <div class="card-left">
+                <div class="coin-icon eth-icon">Ξ</div>
+                <div class="coin-info">
+                    <h2>Ethereum</h2>
+                    <span class="coin-symbol">ETH</span>
+                </div>
+            </div>
+            <div class="card-right">
+                <p class="price" id="ethereum-price">Loading...</p>
+                <span class="change neutral" id="ethereum-change">—</span>
+            </div>
+        </div>
+
+        <div class="crypto-card">
+            <div class="card-left">
+                <div class="coin-icon doge-icon">Ð</div>
+                <div class="coin-info">
+                    <h2>Dogecoin</h2>
+                    <span class="coin-symbol">DOGE</span>
+                </div>
+            </div>
+            <div class="card-right">
+                <p class="price" id="dogecoin-price">Loading...</p>
+                <span class="change neutral" id="dogecoin-change">—</span>
+            </div>
+        </div>
+
+        <div class="crypto-card">
+            <div class="card-left">
+                <div class="coin-icon sol-icon">S</div>
+                <div class="coin-info">
+                    <h2>Solana</h2>
+                    <span class="coin-symbol">SOL</span>
+                </div>
+            </div>
+            <div class="card-right">
+                <p class="price" id="solana-price">Loading...</p>
+                <span class="change neutral" id="solana-change">—</span>
+            </div>
+        </div>
+
+        <button id="refresh-btn" onclick="getCryptoPrices()">↻ Refresh Prices</button>
     </div>
 
-    <div class="crypto-card">
+    <script src="script.js"></script>
+</body>
+="crypto-card">
         <h2>Ethereum (ETH)</h2>
         <p id="ethereum">Loading...</p>
     </div>
