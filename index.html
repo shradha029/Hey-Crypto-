@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Price Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Hey Crypto</h1>
+    <h2>Crypto Price Tracker</h2>
+
+    <div class="crypto-card">
+        <h2>Bitcoin (BTC)</h2>
+        <p id="bitcoin">Loading...</p>
+    </div>
+
+    <div class="crypto-card">
+        <h2>Ethereum (ETH)</h2>
+        <p id="ethereum">Loading...</p>
+    </div>
+
+    <div class="crypto-card">
+        <h2>Dogecoin (DOGE)</h2>
+        <p id="dogecoin">Loading...</p>
+        <!-- Last updated timestamp -->
+<p id="last-updated" style="font-size: 13px; color: #aaa; margin-bottom: 12px;"></p>
+
+<!-- Solana card -->
+<div class="crypto-card">
+    <h2>Solana (SOL)</h2>
+    <p id="solana-price">Loading...</p>
+    <span class="change neutral" id="solana-change">—</span>
+</div>
+
+<!-- Add a change span inside each existing card too -->
+<span class="change neutral" id="bitcoin-change">—</span>
+    </div>
+
+    <button onclick="getCryptoPrices()">Refresh Prices</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+    
